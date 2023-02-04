@@ -53,7 +53,7 @@ const createListMarkup = data => {
   return data
     .map(
       ({ name, flags }) =>
-        `<li><img src="${flags.png}" alt="${name.official}" width="60" height="40">${name.official}</li>`,
+        `<li><img src="${flags.png}" alt="${name.official}" width="60" height="40"> ${name.official}</li>`,
     )
     .join('');
 };
@@ -61,9 +61,7 @@ const createListMarkup = data => {
 const createInfoMarkup = data => {
   return data.map(
     ({ name, capital, population, flags, languages }) =>
-      `<h1><img src="${flags.png}" alt="${name.official}" width="40" height="40">${
-        name.official
-      }</h1>
+      `<h1><img src="${flags.png}" alt="${name.official}" > ${name.official}</h1>
       <p>Capital: ${capital}</p>
       <p>Population: ${population}</p>
       <p>Languages: ${Object.values(languages)}</p>`,
